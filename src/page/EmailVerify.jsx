@@ -1,0 +1,127 @@
+import React, { useState, useEffect } from "react";
+import BgImage from "../assets/2.jpg";
+
+function EmailOTPVerify() {
+    const [otp, setOtp] = useState(["", "", "", ""]);
+    const [timer, setTimer] = useState(30);
+    const [canResend, setCanResend] = useState(false);
+
+    // OTP Change Handler
+    const handleChange = (value, index) => {
+        if (isNaN(value)) return;
+
+        let newOtp = [...otp];
+        newOtp[index] = value;
+        setOtp(newOtp);
+
+        if (value && index < 3) {
+            document.getElementById(`otp-${index + 1}`).focus();
+        }
+    };
+
+    // Submit Handler
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        alert("OTP Submitted: " + otp.join(""));
+    };
+
+    // Timer Countdown Logic
+    useEffect(() => {
+        if (timer === 0) {
+            setCanResend(true);
+            return;
+        }
+
+        const countdown = setInterval(() => {
+            setTimer((prev) => prev - 1);
+        }, 1000);
+
+        return () => clearInterval(countdown);
+    }, [timer]);
+
+    // Resend OTP Function
+    const handleResend = () => {
+        if (!canResend) return;
+        setOtp(["", "", "", ""]);
+        setTimer(30);
+        setCanResend(false);
+        alert("OTP Resent!");
+    };
+
+    return (
+        <div
+            className="min-h-screen w-full bg-cover bg-center bg-no-repeat relative flex justify-center items-center"
+            style={{ backgroundImage: `url(${BgImage})` }}
+        >
+            {/* Dark Overlay */}
+            <div className="absolute inset-0 bg-black/60"></div>
+
+            {/* OTP Card */}
+            <div className="relative z-10 bg-white/10 backdrop-blur-xl p-10 rounded-2xl shadow-2xl w-[90%] max-w-md text-center 
+                animate-[fadeScale_0.7s_ease-out] text-white">
+
+                <h1 className="text-3xl font-bold mb-3 drop-shadow-lg">
+                    Email Verification
+                </h1>
+
+                <p className="text-gray-200 mb-6">
+                    Enter the 4-digit OTP sent to your email.
+                </p>
+
+                {/* OTP Inputs */}
+                <form onSubmit={handleSubmit}>
+                    <div className="flex justify-center gap-4 mb-8">
+                        {otp.map((val, i) => (
+                            <input
+                                key={i}
+                                id={`otp-${i}`}
+                                maxLength="1"
+                                value={val}
+                                onChange={(e) => handleChange(e.target.value, i)}
+                                className="w-14 h-14 text-2xl text-center font-semibold 
+                                    bg-white/20 backdrop-blur-md border border-white/30 rounded-xl
+                                    focus:outline-none focus:border-orange-500 focus:shadow-lg
+                                    transition"
+                                type="text"
+                            />
+                        ))}
+                    </div>
+
+                    <button
+                        type="submit"
+                        className="w-full bg-orange-600 hover:bg-orange-700 py-3 rounded-xl 
+                        text-lg font-semibold transition shadow-md"
+                    >
+                        Verify OTP
+                    </button>
+                </form>
+
+                {/* Resend OTP + Timer */}
+                <p className="mt-5 text-gray-300">
+                    Didn’t get the code?{" "}
+                    <button
+                        disabled={!canResend}
+                        onClick={handleResend}
+                        className={`font-semibold 
+                            ${canResend ? "text-orange-400 hover:underline" : "text-gray-500 cursor-not-allowed"}
+                        `}
+                    >
+                        {canResend ? "Resend OTP" : `Resend in ${timer}s`}
+                    </button>
+                </p>
+            </div>
+
+            {/* Tailwind Keyframes */}
+            <style>
+                {`
+                @keyframes fadeScale {
+                    0% { opacity: 0; transform: scale(0.85); }
+                    100% { opacity: 1; transform: scale(1); }
+                }
+                `}
+            </style>
+        </div>
+    );
+}
+
+export default EmailOTPVerify;
