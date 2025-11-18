@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import DoughnutManBg from "../assets/2.jpg";
+import DoughnutManBg from "../assets/landing2.jpg";
 
 function Login() {
     const [userName, setUserName] = useState("");

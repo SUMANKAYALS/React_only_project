@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom"; // ✅ import useNavigate
-import DoughnutManBg from "../assets/2.jpg";
+import DoughnutManBg from "../assets/landing2.jpg";
 
 function Signup() {
     const [userName, setUserName] = useState("");
