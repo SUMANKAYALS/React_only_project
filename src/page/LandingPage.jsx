@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import BgImage from "../assets/2.jpg";
-import Logo from "../assets/4.png";
+import BgImage from "../assets/landing2.jpg";
+import Logo from "../assets/logo4.png";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
