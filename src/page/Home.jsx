@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import HeroBg from "../assets/Home-bg.jpg"; // Background image
+import HeroBg from "../assets/home-bg.jpg"; // Background image
 import Dish1 from "../assets/dish1.jpg"; // Example dish images
 import Dish2 from "../assets/dish2.jpg";
 import Dish3 from "../assets/dish3.jpg";
