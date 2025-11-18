@@ -1,11 +1,18 @@
 // Sample products (100 items)
+import dish7 from "../assets/dish7.jpg";
+import dish8 from "../assets/dish8.jpg";
+import dish9 from "../assets/dish9.jpg";
+import dish10 from "../assets/dish10.jpg";
+import dish11 from "../assets/dish11.jpg";
+import dish12 from "../assets/dish12.jpg";
+
 const baseProducts = [
-    { name: "Margherita Pizza", price: 1151.16, image: "/src/assets/dish7.jpg" },
-    { name: "Pasta Alfredo", price: 973.92, image: "/src/assets/dish8.jpg" },
-    { name: "Grilled Chicken", price: 1417.02, image: "/src/assets/dish9.jpg" },
-    { name: "Caesar Salad", price: 796.68, image: "/src/assets/dish10.jpg" },
-    { name: "Chocolate Cake", price: 619.45, image: "/src/assets/dish11.jpg" },
-    { name: "Raman", price: 619.45, image: "/src/assets/dish12.jpg" },
+    { name: "Margherita Pizza", price: 1151.16, image: dish7 },
+    { name: "Pasta Alfredo", price: 973.92, image: dish8 },
+    { name: "Grilled Chicken", price: 1417.02, image: dish9 },
+    { name: "Caesar Salad", price: 796.68, image: dish10 },
+    { name: "Chocolate Cake", price: 619.45, image: dish11 },
+    { name: "Raman", price: 619.45, image: dish12 },
 ];
 
 export const products = Array.from({ length: 12 }, (_, i) => {
