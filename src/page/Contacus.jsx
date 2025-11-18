@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import BgImage from "../assets/contact-bg.jpg";
+import bgimage from "../assets/contact-bg.jpg";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -42,7 +42,7 @@ function ContactUs() {
             {/* Background Image */}
             <div
                 className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: `url(${BgImage})` }}
+                style={{ backgroundImage: `url(${bgimage})` }}
             ></div>
 
             {/* Dark Overlay */}

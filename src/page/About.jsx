@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import AboutBg from "../assets/about-bg.jpg"; // Your background image
+import aboutBg from "../assets/about-bg.jpg"; // Your background image
 import Developer from "../assets/developer.jpg"
 import { FaLinkedin, FaInstagram, FaGithub, FaGlobe } from "react-icons/fa";
 
@@ -11,7 +11,7 @@ function About() {
             {/* Background Image */}
             <div
                 className="absolute inset-0 bg-cover bg-center opacity-30"
-                style={{ backgroundImage: `url(${AboutBg})` }}
+                style={{ backgroundImage: `url(${aboutBg})` }}
             ></div>
 
             {/* Overlay */}

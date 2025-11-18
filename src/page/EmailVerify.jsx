@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import BgImage from "../assets/landing2.jpg";
+import bgimage from "../assets/landing2.jpg";
 
 function EmailOTPVerify() {
     const [otp, setOtp] = useState(["", "", "", ""]);
@@ -51,7 +51,7 @@ function EmailOTPVerify() {
     return (
         <div
             className="min-h-screen w-full bg-cover bg-center bg-no-repeat relative flex justify-center items-center"
-            style={{ backgroundImage: `url(${BgImage})` }}
+            style={{ backgroundImage: `url(${bgimage})` }}
         >
             {/* Dark Overlay */}
             <div className="absolute inset-0 bg-black/60"></div>
