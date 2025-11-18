@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import BgImage from "../assets/2.jpg";
+import BgImage from "../assets/landing2.jpg";
 
 function EmailOTPVerify() {
     const [otp, setOtp] = useState(["", "", "", ""]);
